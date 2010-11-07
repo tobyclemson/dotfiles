@@ -1,4 +1,6 @@
-require 'autotest/redgreen'
+unless RUBY_PLATFORM =~ /java/
+	require 'autotest/fsevent'
+end
 
 #module Autotest::Growl
 #

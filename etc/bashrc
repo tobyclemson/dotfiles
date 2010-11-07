@@ -71,30 +71,17 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
   #set -o vi
   #bind -m vi-command -r 'v'
 
-  shopt -s checkwinsize # After each command, checks the windows size and changes lines and columns
-
-
-
-  # Completion -------------------------------------------------------
-
-  # Turn on advanced bash completion if the file exists 
-  # Get it here: http://www.caliban.org/bash/index.shtml#completion) or 
-  # on OSX: sudo port install bash-completion
-  if [ -f /etc/bash_completion ]; then
-      . /etc/bash_completion
-  fi
-  if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
-  fi
-
   # git completion
-  source ~/cl/bin/git-completion.bash
+  source ~/Support/bin/git-completion.bash
+
+  # npm completion
+  source ~/Support/bin/npm-completion.sh
 
   # Add completion to source and .
   complete -F _command source 
   complete -F _command .
 
-
+  shopt -s checkwinsize # After each command, checks the windows size and changes lines and columns
 
   # Prompts ----------------------------------------------------------
   #git_dirty_flag() {
@@ -145,15 +132,15 @@ alias ..='cd ..'
 alias ...='cd .. ; cd ..'
 cl() { cd $1; ls -la; } 
 
-source ~/cl/bin/bashmarks.sh
+source ~/Support/bin/bashmarks.sh
 
 
 
 # Editors ----------------------------------------------------------
-#export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
+export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
 #export EDITOR='gedit'  #Linux/gnome
-export EDITOR='vim'  #Command line
-export GIT_EDITOR='vim'
+#export EDITOR='vim'  #Command line
+export GIT_EDITOR=$EDITOR
 #alias gvim='/Applications/MacVim.app/Contents/MacOS/vim -g'
 
 if [ "$OS" = "darwin" ] ; then
@@ -220,7 +207,7 @@ fi
 
 
 # Misc
-alias reloadbash='source ~/cl/etc/bash_profile'
+alias reloadbash='source ~/Support/etc/bash_profile'
 
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
 alias m='more'
@@ -249,6 +236,8 @@ alias cp_folder="cp -Rpv" #copies folder and all sub files and folders, preservi
 
 alias mirror_website="wget -m -x -p --convert-links --no-host-directories --no-cache -erobots=off"
 
+alias mysql="mysql5 -u root -p"
+
 killhard() {
     kill -9 "$1"
 }
@@ -259,10 +248,10 @@ killhard() {
 if [ $IS_INTERACTIVE = 'true' ] ; then
   source ~/.bashrc_help
 
-  source ~/cl/bin/mq/mq.sh # MySQL tools
-  source ~/cl/bin/rr/rr.sh # Rails tools
-  source ~/cl/bin/gt/gt.sh # Git tools
-  source ~/cl/bin/sv/sv.sh # SVN tools
+  source ~/Support/bin/mq/mq.sh # MySQL tools
+  source ~/Support/bin/rr/rr.sh # Rails tools
+  source ~/Support/bin/gt/gt.sh # Git tools
+  source ~/Support/bin/sv/sv.sh # SVN tools
 fi
 
 if [ -f ~/.bashrc_local ]; then

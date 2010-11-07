@@ -8,6 +8,10 @@ require 'rubygems'
 # Dr Nic's gem inspired by
 # http://redhanded.hobix.com/inspect/stickItInYourIrbrcMethodfinder.html
 require 'what_methods'
+
+# From Dr Nic's irbrc
+# http://drnicwilliams.com/2006/10/12/my-irbrc-for-consoleirb/
+require 'map_by_method'
  
 # Pretty Print method
 require 'pp'
