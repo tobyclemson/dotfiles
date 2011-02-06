@@ -1,3 +1,12 @@
 [user]
 	name = Toby Clemson
 	email = tobyclemson@gmail.com
+[core]
+	autocrlf = input
+	safecrlf = true
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+  hist = "log --pretty=\"%h %ad | %s%d [%an]\" --graph --date=short"
