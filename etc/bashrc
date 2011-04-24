@@ -258,6 +258,10 @@ if [ -f ~/.bashrc_local ]; then
   source ~/.bashrc_local
 fi
 
+if [ -s /usr/local/rvm/scripts/rvm ]; then 
+  source /usr/local/rvm/scripts/rvm # RVM
+fi
+
 
 
 # Test ------------------------------------------------------------------------ 
