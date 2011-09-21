@@ -10,8 +10,6 @@ else
   export IS_REMOTE=true
 fi
 
-
-
 # Colors ----------------------------------------------------------
 export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
@@ -142,6 +140,13 @@ export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate w
 #export EDITOR='vim'  #Command line
 export GIT_EDITOR=$EDITOR
 #alias gvim='/Applications/MacVim.app/Contents/MacOS/vim -g'
+
+if [ "$OS" = "darwin" ] ; then
+  alias e='/Applications/Emacs.app/Contents/MacOS/Emacs'
+  eb() { '/Applications/Emacs.app/Contents/MacOS/Emacs' "$@" & disown; }
+else
+  alias e=emacs
+fi
 
 if [ "$OS" = "darwin" ] ; then
   alias v=mvim
