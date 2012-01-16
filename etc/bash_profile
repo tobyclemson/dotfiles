@@ -23,10 +23,9 @@ if [ -d ~/Support/bin ]; then
 	export PATH=~/Support/bin:$PATH  # add your bin folder to the path, if you have it
 fi
 
-if [ -d /usr/local/Cellar/python/2.7.1/bin/ ]; then
-  export PATH=/usr/local/Cellar/python/2.7.1/bin/:$PATH
+if [ -d /usr/local/share/python ]; then
+  export PATH=/usr/local/share/python:$PATH
 fi
-
 
 
 # Load in .bashrc -------------------------------------------------

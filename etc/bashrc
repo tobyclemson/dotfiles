@@ -257,6 +257,7 @@ if [ $IS_INTERACTIVE = 'true' ] ; then
   source ~/Support/bin/rr/rr.sh # Rails tools
   source ~/Support/bin/gt/gt.sh # Git tools
   source ~/Support/bin/sv/sv.sh # SVN tools
+  source ~/Support/bin/jv/jv.sh # Java tools
 fi
 
 if [ -f ~/.bashrc_local ]; then

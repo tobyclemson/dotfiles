@@ -2,8 +2,9 @@
 	name = Toby Clemson
 	email = tobyclemson@gmail.com
 [core]
-	autocrlf = input
-	safecrlf = true
+	autocrlf = false
+	safecrlf = false
+	quotepath = false
 [color]
 	diff = auto
 	status = auto
