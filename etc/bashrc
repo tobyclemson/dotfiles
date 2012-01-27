@@ -69,11 +69,17 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
   #set -o vi
   #bind -m vi-command -r 'v'
 
+  # bash completion
+  source ~/Support/bin/bash-completion.sh
+
   # git completion
   source ~/Support/bin/git-completion.bash
 
   # npm completion
   source ~/Support/bin/npm-completion.sh
+
+  # npm completion
+  source ~/Support/bin/ant-completion.sh
 
   # Add completion to source and .
   complete -F _command source 
@@ -263,10 +269,10 @@ killhard() {
 # Ruby ----------------------------------------------------
 
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
 # Fixes problems with sending email in ruby
-export RUBYOPT="-r openssl"
+# export RUBYOPT="-r openssl"
 
 
 
